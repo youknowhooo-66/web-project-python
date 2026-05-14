@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiro passo Flask</title>
+</head>
+<body>
+    
+    <h1>Servidor Flask funcionando</h1>
+    <p>Se você está vendo esta página, o backend entregou este HTML.</p>
+    
+    <h1>Passo 2 formularios</h1>
+    <form action="/enviar" method="POST">
+        <label for="nome">Digite seu nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <h1>Passo 3 - Enviar imagem para o Flask</h1>
+
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="imagem">Escolha uma imagem:</label>
+        <input type="file" id="imagem" name="imagem" accept="imagem/*" required>
+        <button type="submit">Enviar imagem</button>
+    </form>
+
+    <h1>Passo 4 - Enviar imagem e coordenadas</h1>
+
+    <form action="/recortar" method="POST" enctype="multipart/form-data">
+        <div>
+            <label for="imagem">Escolha uma imagem:</label>
+            <input type="file" id="imagem" name="imagem" accept="image/*" required>
+        </div>
+
+        <div>
+            <label for="x">X:</label>
+            <input type="number" id="x" name="x" required>
+        </div>
+
+        <div>
+            <label for="y">Y:</label>
+            <input type="number" id="y" name="y" required>
+        </div>
+
+        <div>
+            <label for="w">Largura:</label>
+            <input type="number" id="w" name="w" required>  
+        </div>
+
+        <div>
+            <label for="h">Altura:</label>
+            <input type="number" id="h" name="h" required>
+        </div>
+
+        <div>
+            <label for="nome_saida">Nome do novo arquivo: </label>
+            <input type="text" id="nome_saida" name="nome_saida" required>
+        </div>
+        
+        <button type="submit">Enviar dados</button>
+    </form>
+
+</body>
+</html>
